@@ -1,12 +1,18 @@
+import { Markup } from './Markup.js'
+
 const Slide = {
+    components: { Markup },
     template: `
         <div :style="slideStyle">
-            <slot></slot>
+            <component :is="component" :slide="slide"></component>
         </div>
     `,
-    props: ['values'],
+    props: ['slide','values'],
     data: () => ({ style }),
     computed: {
+        component() {
+            return 'markup'
+        },
         slideStyle() {
             return [
                 style.slide,
@@ -26,8 +32,8 @@ const style = {
         right: 0,
         bottom: 0,
         left: 0,
-        padding: '3rem',
-        color: 'rgba(255,255,255,0.8)'
+        color: 'rgba(255,255,255,0.8)',
+        fontFamily: 'sans-serif'
     }
 }
 

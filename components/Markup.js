@@ -16,7 +16,7 @@ const Markup = {
 
 const style = {
     slide: {
-        fontFamily: 'sans-serif'
+        padding: '3rem',
     }
 }
 

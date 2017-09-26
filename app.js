@@ -1,25 +1,21 @@
 import { Slide } from './components/Slide.js'
-import { Markup } from './components/Markup.js'
 import { Settings } from './components/Settings.js'
 
 import { settings } from '../settings.js'
 
 new Vue({
     el: '#app',
-    components: { Markup, Settings, Slide },
+    components: { Slide, Settings },
     template: `
         <div>
             <settings></settings>
             <slide
                 v-for="(slide, index) in slides"
+                :key="index"
                 v-show="currentSlide === index"
                 :values="settings.values"
-                :key="index"
+                :slide="slide"
             >
-                <markup
-                    :slide="slide"
-                    :values="settings.values"
-                ></markup>
             </slide>
         </div>
     `,
