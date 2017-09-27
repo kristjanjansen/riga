@@ -3,13 +3,21 @@ Hello what is going on?
 ### Sample
 
 ```
+// Slide.js
+
 const Slide = {
     components: { Markup },
-    template: `<div>Hello</div>`,
+    template: `
+        <div>
+            Hello
+        </div>
+    `,
     mounted() {
         return 'Hey'
     }
 }
+
+export { Slide }
 ```
 
 Something else
