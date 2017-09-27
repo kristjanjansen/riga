@@ -3,6 +3,8 @@ import { Settings } from './components/Settings.js'
 
 import { settings } from '../settings.js'
 
+hljs.initHighlightingOnLoad();
+
 new Vue({
     el: '#app',
     components: { Slide, Settings },
@@ -33,5 +35,6 @@ new Vue({
             if (e.keyCode == 37) { this.currentSlide-- }
             if (e.keyCode == 39) { this.currentSlide++ }
         })
+        hljs.initHighlightingOnLoad();
     }
 })

@@ -1,3 +1,6 @@
+[[sample|Hello]]
+---
+
 # Decoupled in practice:<br>the modern web frontend
 
 ## Kristjan Jansen
@@ -8,9 +11,7 @@
 
 ---
 
-# Slide 2!
-
-* Hello
+[[photo|https://www.built.io/assets/bltab86fb3df50f2a03/built.io-logo.svg]]
 
 ---
 
