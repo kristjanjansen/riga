@@ -1,23 +1,18 @@
 import { Markup } from "./Markup.js";
-import { Photo } from "./Photo.js";
-import { Dynamic } from "./Dynamic.js";
 
 const Slide = {
-    components: { Markup, Photo, Dynamic },
+    components: { Markup },
     template: `
-        <dynamic
+        <markup
             :style="slideStyle"
-            :slide="slideHTML"
+            :slide="slide"
             :values="values"
         >
-        </dynamic>
+        </markup>
     `,
     props: ["slide", "values"],
     data: () => ({ style }),
     computed: {
-        slideHTML() {
-            return `<div>${marked(this.slide, { breaks: true })}</div>`
-        },
         slideStyle() {
             return [
                 style.slide,
@@ -38,7 +33,8 @@ const style = {
         bottom: 0,
         left: 0,
         color: "rgba(255,255,255,0.8)",
-        fontFamily: "sans-serif"
+        fontFamily: "sans-serif",
+        padding: '2rem'
     }
 };
 

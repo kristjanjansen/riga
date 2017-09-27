@@ -1,6 +1,6 @@
 const Sample = {
     template: `
-        <div :style="style.sample" ref="sample">console.log()</div>
+        <div :style="style.sample" ref="sample"><slot></slot></div>
     `,
     props: [],
     data: () => ({ style }),
@@ -12,7 +12,8 @@ const Sample = {
 const style = {
     sample: {
         fontFamily: 'monospace',
-        fontSize: '1.5rem'
+        fontSize: '1.5rem',
+        padding: '1.5rem'
     }
 }
 

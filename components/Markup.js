@@ -9,7 +9,10 @@ const Markup = {
     data: () => ({ style }),
     computed: {
         slideHtml() {
-            return marked(this.slide, { breaks: true })
+            return marked(this.slide, {
+                breaks: true,
+                highlight: code => hljs.highlightAuto(code).value
+            })
         }
     }
 }
