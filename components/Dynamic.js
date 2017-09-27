@@ -1,19 +1,24 @@
 // https://stackoverflow.com/questions/37133282/how-to-use-components-in-v-html
 
-const res = Vue.compile('<div><span>{{ msg }}</span></div>')
-
 const Dynamic = {
-    render: res.render,
-    staticRenderFns: res.staticRenderFns,
-    props: ['slide', 'values'],
-    data: () => ({ style, msg: 'Hey', res: null }),
-    mounted() {
-    }
-}
-
-const style = {
-    slide: {
-        padding: '3rem',
+    props: ['slide'],
+    data: () => ({ renderedSlide: null }),
+    render(h) {
+        return this.renderedSlide ? this.renderedSlide() : h()
+    },
+    watch: {
+        slide: {
+            immediate: true,
+            handler() {
+                var res = Vue.compile(this.slide)
+                this.renderedSlide = res.render
+                this.$options.staticRenderFns = []
+                this._staticTrees = []
+                for (var i in res.staticRenderFns) {
+                    this.$options.staticRenderFns.push(res.staticRenderFns[i])
+                }
+            }
+        }
     }
 }
 

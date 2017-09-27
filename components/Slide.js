@@ -1,29 +1,18 @@
 import { Markup } from "./Markup.js";
 import { Photo } from "./Photo.js";
-import { Sample } from "./Sample.js";
+import { Dynamic } from "./Dynamic.js";
 
 const Slide = {
-    components: { Markup, Photo, Sample },
+    components: { Markup, Photo, Dynamic },
     template: `
-        <div :style="slideStyle">
-            <component
-                :is="component.is"
-                :argument1="component.argument1"
-                :slide="slide"
-            ></component>
-        </div>
+        <dynamic :style="slideStyle" :slide="slideHTML">
+        </dynamic>
     `,
     props: ["slide", "values"],
     data: () => ({ style }),
     computed: {
-        component() {
-            var customComponent = this.slide.match(/\[\[(.*)\]\]/m);
-            console.log(customComponent)
-            if (customComponent) {
-                var parts = customComponent[1].split('|');
-                return { is: parts[0], argument1: parts[1] ? parts[1] : null };
-            }
-            return { is: 'markup', 'argument1': null };
+        slideHTML() {
+            return `<div>${marked(this.slide, { breaks: true })}</div>`
         },
         slideStyle() {
             return [
