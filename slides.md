@@ -1,3 +1,5 @@
+<sample></sample>
+
 # Decoupled in practice:<br>the modern web frontend
 
 ## Kristjan Jansen

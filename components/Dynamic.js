@@ -1,7 +1,11 @@
 // https://stackoverflow.com/questions/37133282/how-to-use-components-in-v-html
 
+import { Photo } from "./Photo.js";
+import { Sample } from "./Sample.js";
+
 const Dynamic = {
-    props: ['slide'],
+    components: { Photo, Sample },
+    props: ['slide', 'values'],
     data: () => ({ renderedSlide: null }),
     render(h) {
         return this.renderedSlide ? this.renderedSlide() : h()

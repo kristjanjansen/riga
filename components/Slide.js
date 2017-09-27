@@ -5,7 +5,11 @@ import { Dynamic } from "./Dynamic.js";
 const Slide = {
     components: { Markup, Photo, Dynamic },
     template: `
-        <dynamic :style="slideStyle" :slide="slideHTML">
+        <dynamic
+            :style="slideStyle"
+            :slide="slideHTML"
+            :values="values"
+        >
         </dynamic>
     `,
     props: ["slide", "values"],

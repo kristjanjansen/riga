@@ -1,16 +1,18 @@
 const Sample = {
     template: `
-        <div>{{ argument1 }}</div>
+        <div :style="style.sample" ref="sample">console.log()</div>
     `,
-    props: ['slide', 'values', 'argument1'],
+    props: [],
     data: () => ({ style }),
-    computed: {
+    mounted() {
+        hljs.highlightBlock(this.$refs.sample);
     }
 }
 
 const style = {
-    slide: {
-        padding: '3rem',
+    sample: {
+        fontFamily: 'monospace',
+        fontSize: '1.5rem'
     }
 }
 

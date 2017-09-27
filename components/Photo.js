@@ -1,13 +1,11 @@
 const Photo = {
     template: `
         <div :style="style.wrapper">
-            <img :src="argument1" />
+            <img :width="values.bla" :src="src" />
         </div>
     `,
-    props: ['slide', 'values', 'argument1'],
+    props: ['src', 'values'],
     data: () => ({ style }),
-    computed: {
-    }
 }
 
 const style = {
