@@ -17,7 +17,7 @@ const Slide = {
             return [
                 style.slide,
                 {
-                    background: `hsl(${this.values.color * 3.6}, 50%, 35%)`,
+                    background: `hsl(${this.values.color * 3.6}, 50%, 25%)`,
                     fontSize: 1 + this.values.size * 0.01 + "rem"
                 }
             ];

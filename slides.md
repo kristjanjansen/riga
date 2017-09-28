@@ -1,3 +1,13 @@
+# Decoupled in practice:<br>the modern web frontend
+
+## Kristjan Jansen
+
+<br><br><br>
+
+## Drupalcamp Baltics, Vilnius 2018
+
+---
+
 Hello what is going on?
 
 ### Sample
@@ -21,17 +31,3 @@ export { Slide }
 ```
 
 Something else
-
----
-
-# Decoupled in practice:<br>the modern web frontend
-
-## Kristjan Jansen
-
-<br><br><br>
-
-## Drupalcamp Baltics, Vilnius 2018
-
----
-
-# Slide 3
