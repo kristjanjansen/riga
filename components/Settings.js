@@ -41,7 +41,8 @@ const style = {
         bottom: 0,
         width: '10rem',
         background: 'white',
-        padding: '1.5rem'
+        padding: '1.5rem',
+        color: '#444'
     },
     value: {
         marginBottom: '1rem',

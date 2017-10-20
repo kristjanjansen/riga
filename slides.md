@@ -1,33 +1,30 @@
-# Decoupled in practice:<br>the modern web frontend
+> ![](./images/logo.png)
 
-## Kristjan Jansen
+> # Decoupled in practice:<br>the modern web frontend
 
-<br><br><br>
-
-## Drupalcamp Baltics, Vilnius 2018
+> Kristjan Jansen / kogu.io
+> Drupalcamp Baltics
+> Vilnius 2018
 
 ---
 
-Hello what is going on?
+# About me
 
-### Sample
+I am Kristjan Jansen, interaction designer and full stack developer with over 12 years of experience.
 
-```
-// Slide.js
+I am prototyping digital products, build design systems, lead and mentor tech teams and teach the next generation of designers.
 
-const Slide = {
-    components: { Markup },
-    template: `
-        <div>
-            Hello
-        </div>
-    `,
-    mounted() {
-        return 'Hey'
-    }
-}
+I am currently working on [kogu.io](http://google.com), a data science tooling startup to build the best possible user experience for AI development.
 
-export { Slide }
-```
+---
 
-Something else
+![](./images/dries1.png)
+
+---
+
+![](./images/do1.png)
+
+---
+
+> # Drupal is _very likely_ going for React
+

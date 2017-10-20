@@ -1,7 +1,7 @@
 const settings = {
     values: {
-        size: 1,
-        color: 60,
+        size: 8,
+        color: 56,
         bla: 0
     },
     update(values) {

@@ -3,7 +3,7 @@ import { Settings } from './components/Settings.js'
 
 import { settings } from '../settings.js'
 
-hljs.initHighlightingOnLoad();
+//hljs.initHighlightingOnLoad();
 
 new Vue({
     el: '#app',
@@ -24,10 +24,11 @@ new Vue({
     data: { slides: [], currentSlide: 0, settings },
     methods: {
         parseSlides(slides) {
-            return slides.split('\n---\n')
+            return slides.split('\n---\n').map(slide => slide.split('\n--\n'))
         }
     },
     mounted() {
+        this.currentSlide = parseInt(localStorage.getItem('currentSlide')) || 0
         axios.get('./slides.md').then(res => {
             this.slides = this.parseSlides(res.data)
         })
@@ -36,5 +37,10 @@ new Vue({
             if (e.keyCode == 39) { this.currentSlide++ }
         })
         hljs.initHighlightingOnLoad();
+    },
+    watch: {
+        currentSlide(value) {
+            localStorage.setItem('currentSlide', value)
+        }
     }
 })
