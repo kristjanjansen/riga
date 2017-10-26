@@ -4,49 +4,72 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/marked"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/hybrid.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Source+Code+Pro" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: 'Ubuntu', monospace;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.85);
         }
         a {
-            color: rgba(255,255,255,1);
+            color: rgba(255,255,255,0.7);
         }
-        p {
-            font-size: 1.7em;
+        p, li {
+            font-size: 1.8em;
             line-height: 1.75em;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
         }
+
         h1 {
             margin: 0 0 0.2em 0;
             font-size: 3.5em;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+        }
+        h2 {
+            font-size: 2.2em;
+            color: rgba(255,255,255,1);
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+        }
+        h3 {
+            font-size: 1.9em;
+            color: rgba(255,255,255,1);
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
         }
         pre {
-            font-size: 1em;
+            font-size: 1.2em;
             padding: 1rem;
-            line-height: 1.6em;
-            margin: 0;
+            line-height: 1.5em;
         }
         pre, code {
             background: #282c34;
             font-family: 'Source Code Pro', monospace;
         }
-        img {
-            width: 80%;
-            display: block;
-            text-align: center;
+        .image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;  
+            justify-content: center;
+            background: rgba(255,255,255,0);
+        }
+        .image img {
+            max-width: 80%;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
         }
         em {
             font-style: normal;
-            color: yellow;
+            color: #EFD540;
         }
         blockquote > * {
             text-align: center;
         }
-        blockquote img {
+        blockquote .image img {
+            box-shadow: none;
             width: initial;
             position: absolute;
             top: 3rem;
@@ -55,6 +78,24 @@
         blockquote h1 {
             margin-top: 9rem;
             margin-bottom: 3rem;
+        }
+        input[type=range] {
+            -webkit-appearance: none;
+            background: rgba(255,255,255,0.75);
+            height: 1px;
+            position: relative;
+            outline: none;
+            width: 100%;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: 1px solid rgba(255,255,255,0.75);
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 100px;
+            background: rgba(100,100,100,1);
+            cursor: pointer;
+            box-shadow: 1px 1px 3px $gray;
         }
 
     </style>

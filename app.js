@@ -3,8 +3,6 @@ import { Settings } from './components/Settings.js'
 
 import { settings } from '../settings.js'
 
-//hljs.initHighlightingOnLoad();
-
 new Vue({
     el: '#app',
     components: { Slide, Settings },

@@ -1,6 +1,5 @@
 import { Markdown } from "./Markdown.js";
-// 204 - x
-// 360 - 100 
+
 const Slide = {
     components: { Markdown },
     template: `
@@ -16,8 +15,9 @@ const Slide = {
             return [
                 style.slide,
                 {
-                    background: `hsl(${this.values.color * 3.6}, 90%, 23%)`,
-                    fontSize: 0.9 + this.values.size * 0.01 + "rem"
+                    background: `hsl(${this.values.Color * 3.6}, 90%, 23%)`,
+                    fontSize: 0.8 + this.values.Size * 0.005 + "rem",
+                    padding: (3 + this.values.Padding * 0.05) + "vw"
                 }
             ]
         },
@@ -39,7 +39,6 @@ const style = {
         right: 0,
         bottom: 0,
         left: 0,
-        padding: '5vw',
         display: 'flex',
     },
     col: {
