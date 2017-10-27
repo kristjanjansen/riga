@@ -1,7 +1,7 @@
 import { Slide } from './components/Slide.js'
 import { Settings } from './components/Settings.js'
 
-import { settings } from '../settings.js'
+import { settings } from './settings.js'
 
 new Vue({
     el: '#app',
