@@ -12,13 +12,13 @@
 
 I am Kristjan Jansen
 
-I am *prototyping* digital products, *develop* design systems and fullstack code, *mentor* tech teams and *teach* the next generation of designers.
+I am **prototyping** digital products, **develop** design systems and fullstack code, **mentor** tech teams and **teach** the next generation of designers.
 
 ---
 
 # About me
 
-I am currently working in *Proekspert*, a data science tooling startup to build the best possible user experience for AI development.
+I am currently working in **Proekspert**, a data science company building the best possible user experience for AI development.
 
 https://proekspert.ee
 
@@ -46,9 +46,9 @@ I made some early core themes, helped on user experience, founded Estonian Drupa
 
 Let's follow up on Ruben Teijeiro's talk:
 
-* What does *decouped* / headless Drupal building mean *in practice*?
-* How should I *learn about modern frontend* stack?
-* What is the *future of Drupal* administration interface?
+* What does decoupled / headless Drupal building mean **in practice**?
+* How should I **start learning modern frontend** tools?
+* When to use decoupled Drupal?
 
 ---
 
@@ -81,9 +81,9 @@ Soon in core (8.5 / 8.6)
 
 No config, works out of box
 
-Based on industry standard
+Based on<br>industry standard
 
-Third-party tooling available
+Good tooling available
 
 --
 
@@ -94,6 +94,8 @@ Someday in core
 Some config needed
 
 By Facebook,<br>now a industry standard
+
+Very good tooling available
 
 Huge learning curve
 
@@ -110,10 +112,50 @@ Lets get started
 composer require drupal/jsonapi
 drupal module:install jsonapi
 ```
+
 ---
 
+# Takeaways from demo
 
-# Lets compare our three apporaches
+* JSON API data needs extra processing to be usable, for example `jsonapi-parse` in NPM
+* You will have to create your own `format_*` functions
+* Not all content on page can be included on a single request
+
+---
+
+# Getting all the data needed for the page
+
+```
+const uuid = '95a0a7b9-1d7e-4766-a412-fdf4da2099ba'
+
+// 1. Get the article
+
+axios.get('node/article/' + uuid)
+  .then( /* do something with article data */ )
+
+// 2. Get its comments
+
+axios.get('comment/comment'), { params: { 'filter[entity_id.uuid]⌈value⌉': uuid } })
+  .then( /* do something with comments data */ )
+
+// 3. Get logged in user...
+// 4. Get related articles...
+
+```
+
+---
+
+# Lets start with frameworks
+
+As the time of writing...
+
+---
+
+![](./images/vue.png)
+
+---
+
+![](./images/react.png)
 
 ---
 
@@ -200,8 +242,14 @@ Latest browsers
 
 # Use React in your Drupal theme
 
-❶ Install NodeJS
-❷ Add these three files to Drupal root:
+1. Install NodeJS https://nodejs.org
+2. Add the following three files to Drupal root
+3. Run
+   
+```
+npm install
+npm run build
+```
 
 ---
 
@@ -277,111 +325,51 @@ module.exports = options => {
 
 ---
 
-# Takeaways
+# Takeaway from the framework demos
 
-* JSON API data needs extra processing to be usable, for example `jsonapi-parse` in NPM
-* You will have to create your own `format_*` functions
-* Not all content on page can be included on a single request
-
----
-
-# Getting related data
-
-```
-const uuid = '95a0a7b9-1d7e-4766-a412-fdf4da2099ba'
-
-// 1. Get the article
-
-axios.get('node/article/' + uuid)
-  .then( /* do something with article data */ )
-
-// 2. Get its comments
-
-axios.get('comment/comment'), { params: { 'filter[entity_id.uuid]⌈value⌉': uuid } })
-  .then( /* do something with comments data */ )
-
-// 3. Get the logged in user
-
-...
-
-```
+* The frameworks are more similar than we think
+* For experimentation you do not need framework at all
+* *Learn modern Javascript first*. It will be here for a long time
 
 ---
 
-# Related data
+# Takeaway from the framework demos
 
-**GraphQL** to the rescue?
+http://javascript.info
 
----
+https://vuejs.org/v2/guide
 
-### Ask for data in this shape
-
-```
-{
-  nodeQuery(offset: 0, limit: 0) {
-    entities {
-      entityLabel
-      entityId
-      entityBundle
-      fieldTags {
-        entityType
-        entityLabel
-        entityId
-      }
-    }
-  }  
-}
-```
---
-
-### Get this data back
-
-```
-{
-  "data": {
-    "nodeQuery": {
-      "entities": [
-        {
-          "entityLabel": "My Article",
-          "entityId": 1,
-          "entityBundle": "article",
-          "fieldTags": [
-            {
-              "entityType": "taxonomy_term",
-              "entityLabel": "apple",
-              "entityId": 5
-            },
-            {
-              "entityType": "taxonomy_term",
-              "entityLabel": "banana",
-              "entityId": 4
-            }
-          ]
-        }
-      ]
-  }
-}
-```
+http://www.react.express
+https://www.webpackbin.com
 
 ---
 
-> # Was it worth it?
+> # When to use decoupled Drupal?
+
+> What will we lose? What will we win?
+
 
 ---
-# What we lost
 
+### What we lose<br>in theming
+ 
 * Helper functions for data rendering
 * Accessibility markup
 * Search engine optimization
-* Authentication and authorization
 * Localization
-* Form building and validation
-* Testing
 * RDF 🤓
 
----
+--
 
-# What we lost
+### What we lose<br>in development
+
+* Authentication and authorization
+* Form building and validation
+* Testing
+
+--
+
+### What we lose<br>in admin
 
 * In-place editing
 * Contextual links
@@ -394,7 +382,7 @@ axios.get('comment/comment'), { params: { 'filter[entity_id.uuid]⌈value⌉': u
 
 # What we won?
 
-We never exposed the true power of modern frontend frameworks, they are not just template engines:
+We never exposed the true power of modern frontend frameworks, they are not just template engines.
 
 --
 
@@ -416,26 +404,21 @@ We never exposed the true power of modern frontend frameworks, they are not just
 
 ---
 
-# What we won?
-
-Redefine workflows: From code to design
+<video autoplay="" loop="" muted="" class="xp"><source src="https://s3-us-west-1.amazonaws.com/c8r-demo/lab-demo.webm" type="video/webm"><source src="https://s3-us-west-1.amazonaws.com/c8r-demo/lab-demo.mp4" type="video/mp4"></video>
 
 ---
 
-> <video style="width: 100%; height: 100%;" src="https://airbnb.design/wp-content/uploads/2017/04/DLS-Component-Screen-Sizes.mp4" preload="metadata" autoplay="autoplay" loop="loop" width="1280" height="720"></video>
-
----
-
-> <video style="width: 100%; height: 100%;" src="https://airbnb.design/wp-content/uploads/2017/04/2017-04-24-18_39_03.mp4?_=1" preload="metadata" autoplay="autoplay" loop="loop" width="1280" height="720"></video>
+<br><br><br><br>
+> https://learningmusic.ableton.com/
 
 ---
 
 # What we won?
 
-Perhaps the biggest gains are not technical
+Perhaps the biggest gains are not technical nor fancy
 
 ---
-
+<br>
 > # Freedom
 
 ---
@@ -446,39 +429,9 @@ Perhaps the biggest gains are not technical
 * Allows more experimentation on technologies, attract talent
 * Hiring developers without forcing Drupal on them
 
-## Getting started with React
-
-Actually, it's not that hard. You will need to have:
-
-## ES6 resources
-
-http://javascript.info to guide you
-
-## Vue resources
-
-https://vuejs.org to guide you
-https://laracasts.com/series/learn-vue-2-step-by-step for video tutorials
-
 ---
 
-# React resources
-
-http://www.react.express to guide you
-https://www.webpackbin.com to play around in the web editor
-
----
-
-# Getting started with React
-
-Why not https://github.com/facebookincubator/create-react-app?
-
-👌 Great for getting started super-fast, without writing configuration
-💉 Does not teach you about *components*, the key concept writing modern UIs
-💉 Pushing you using another package manager, Yarn
-💉 Although minimal, still contains a lot of extra baggage...
-💉 ...especially when moving on to production use
-
----
+> # There is one more thing
 
 ---
 
@@ -490,8 +443,7 @@ Why not https://github.com/facebookincubator/create-react-app?
 
 ---
 
-> # Drupal is _very likely_ going for React
+> # Let's start learning, now 
 
----
-
-
+> https://kristjanjansen.ee/vilnius
+> https://github.com/kristjanjansen/vilnius

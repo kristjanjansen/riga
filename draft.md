@@ -1,3 +1,75 @@
+# Getting started with React
+
+Why not https://github.com/facebookincubator/create-react-app?
+
+👌 Great for getting started super-fast, without writing configuration
+💉 Does not teach you about *components*, the key concept writing modern UIs
+💉 Pushing you using another package manager, Yarn
+💉 Although minimal, still contains a lot of extra baggage...
+💉 ...especially when moving on to production use
+
+
+```
+
+---
+
+# Related data
+
+**GraphQL** to the rescue?
+
+---
+
+### Ask for data in this shape
+
+```
+{
+  nodeQuery(offset: 0, limit: 0) {
+    entities {
+      entityLabel
+      entityId
+      entityBundle
+      fieldTags {
+        entityType
+        entityLabel
+        entityId
+      }
+    }
+  }  
+}
+```
+--
+
+### Get this data back
+
+```
+{
+  "data": {
+    "nodeQuery": {
+      "entities": [
+        {
+          "entityLabel": "My Article",
+          "entityId": 1,
+          "entityBundle": "article",
+          "fieldTags": [
+            {
+              "entityType": "taxonomy_term",
+              "entityLabel": "apple",
+              "entityId": 5
+            },
+            {
+              "entityType": "taxonomy_term",
+              "entityLabel": "banana",
+              "entityId": 4
+            }
+          ]
+        }
+      ]
+  }
+}
+```
+
+---
+> It comes with new level of **responsibility**
 
 ---
 
