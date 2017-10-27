@@ -18,6 +18,20 @@
 
 ---
 
+# Follow along
+
+### Slides
+
+https://github.com/kristjanjansen/vilnius
+http://kristjanjansen.ee/vilnius/
+
+### Example project
+
+https://github.com/kristjanjansen/drupal_example
+
+
+---
+
 # About me
 
 I am **Kristjan Jansen**
@@ -28,7 +42,7 @@ I am **prototyping** digital products, **develop** design systems and fullstack 
 
 # About me
 
-I am currently working in **Proekspert**, a data science company building the best possible user experience for AI development.
+I am working for **Proekspert**, a data science company building the best possible user experience for AI development.
 
 https://proekspert.ee
 
@@ -453,8 +467,8 @@ Perhaps the biggest gains are not technical nor fancy
 
 ### Slides
 
-https://github.com/kristjanjansen/vilnius
 http://kristjanjansen.ee/vilnius/
+https://github.com/kristjanjansen/vilnius
 
 ### Example project
 
