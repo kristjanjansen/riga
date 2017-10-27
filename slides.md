@@ -42,13 +42,13 @@ I made some early core themes, helped on user experience, founded Estonian Drupa
 
 ---
 
-# What we are talking about?
+# What we gonna be talking about?
 
 Let's follow up on Ruben Teijeiro's talk:
 
 * What does *decouped* / headless Drupal building mean *in practice*?
-* Where should I start *learning modern frontend* stack?
-* What is the *future of Drupal* user interdace?
+* How should I *learn about modern frontend* stack?
+* What is the *future of Drupal* administration interface?
 
 ---
 
@@ -61,183 +61,63 @@ https://github.com/kristjanjansen/vilnius
 
 ---
 
-# Headless → Decoupled
+# Let's get started 
 
-Using Drupal 
+Three ways to get the data out of Drupal (and into Drupal) using APIs:
+
+---
+### REST API
+
+In core
+
+Needs configuration
+
+You have to invent<br>your own standard
+--
+
+### JSON API
+
+Soon in core (8.5 / 8.6)
+
+No config, works out of box
+
+Based on industry standard
+
+Third-party tooling available
+
+--
+
+### GraphQL
+
+Someday in core
+
+Some config needed
+
+By Facebook,<br>now a industry standard
+
+Huge learning curve
+
+Work in progress
+
 
 ---
 
-# Lets start with JSON API
+# JSON API
 
-https://www.drupal.org/project/jsonapi
+Lets get started
 
 ```
 composer require drupal/jsonapi
 drupal module:install jsonapi
 ```
-
 ---
 
-# Lets start with JSON API
-
-## Documentation
-
-https://www.drupal.org/docs/8/modules/json-api/fetching-resources-get
-
-## Videos by module author
-
-https://www.youtube.com/playlist?list=PLZOQ_ZMpYrZsyO-3IstImK1okrpfAjuMZ
-http://javascript.info/
-
----
-
-# Takeaways
-
-* JSON API data needs extra wrangling to be usable
-* You will have to create your own format_ functions
-
-# Related data
-
-Not all content can be included in a single request:
-
-```
-const uuid = '95a0a7b9-1d7e-4766-a412-fdf4da2099ba'
-
-// 1. Get the article
-
-axios.get('node/article/' + uuid)
-  .then( /* do something with article data */ )
-
-// 2. Get its comments
-
-axios.get('comment/comment'), { params: { 'filter[entity_id.uuid]⌈value⌉': uuid } })
-  .then( /* do something with comments data */ )
-
-```
-
----
-
-# Related data
-
-*GraphQL* to the rescue?
-
-http://graphql.org/
-https://www.drupal.org/project/graphql
-
----
-
-```
-{
-  nodeQuery(offset: 0, limit: 0) {
-    entities {
-      entityLabel
-      entityId
-      entityBundle
-      fieldTags {
-        entityType
-        entityLabel
-        entityId
-      }
-    }
-  }  
-}
-```
---
-
-```
-{
-  "data": {
-    "nodeQuery": {
-      "entities": [
-        {
-          "entityLabel": "My Article",
-          "entityId": 1,
-          "entityBundle": "article",
-          "fieldTags": [
-            {
-              "entityType": "taxonomy_term",
-              "entityLabel": "apple",
-              "entityId": 5
-            },
-            {
-              "entityType": "taxonomy_term",
-              "entityLabel": "banana",
-              "entityId": 4
-            }
-          ]
-        }
-      ]
-  }
-}
-```
----
-
-Caveats:
-
-* The latest version is going through the rewrite
-* Documentation is not yet updated
-
----
-
-# What we lost
-
-* Accessibility
-* SEO
-* i18n
-* RDF 🤓
-
-* Reactivity
-* State
-* Forms
-
----
-
-# What we won?
-
----
-
-
----
-
-## Getting started with React
-
-Actually, it's not that hard. You will need to have:
-
-## ES6 resources
-
-http://javascript.info to guide you
-
-## Vue resources
-
-https://vuejs.org to guide you
-https://laracasts.com/series/learn-vue-2-step-by-step for video tutorials
-
----
-
-# React resources
-
-http://www.react.express to guide you
-https://www.webpackbin.com to play around in the web editor
-
----
-
-# Getting started with React
-
-Why not https://github.com/facebookincubator/create-react-app?
-
-👌 Great for getting started super-fast, without writing configuration
-💉 Does not teach you about *components*, the key concept writing modern UIs
-💉 Pushing you using another package manager, Yarn
-💉 Although minimal, still contains a lot of extra baggage...
-💉 ...especially when moving on to production use
-
----
 
 # Lets compare our three apporaches
 
 ---
 
-### Simple component:<br>*JS*
+## Javascript
 
 ```
 
@@ -252,7 +132,7 @@ export default title => `
 ```
 --
 
-### Simple component: *Vue*
+## Vue
 
 ```
 
@@ -271,7 +151,7 @@ export default {
 
 --
 
-### Simple component: *React*
+## React
 
 ```
 import React from 'react'
@@ -283,6 +163,39 @@ export default ({ title }) =>
         </a>
     </header>
 ```
+---
+
+### &nbsp;
+
+**Development**
+
+**Production**
+
+--
+
+## Javascript
+
+Latest browsers
+
+—
+
+--
+
+## Vue
+
+Latest browsers
+
+⚒ Needs compilation 
+
+--
+
+## React
+
+⚒ Needs compilation 
+
+⚒ Needs compilation 
+
+
 ---
 
 # Use React in your Drupal theme
@@ -364,6 +277,211 @@ module.exports = options => {
 
 ---
 
+# Takeaways
+
+* JSON API data needs extra processing to be usable, for example `jsonapi-parse` in NPM
+* You will have to create your own `format_*` functions
+* Not all content on page can be included on a single request
+
+---
+
+# Getting related data
+
+```
+const uuid = '95a0a7b9-1d7e-4766-a412-fdf4da2099ba'
+
+// 1. Get the article
+
+axios.get('node/article/' + uuid)
+  .then( /* do something with article data */ )
+
+// 2. Get its comments
+
+axios.get('comment/comment'), { params: { 'filter[entity_id.uuid]⌈value⌉': uuid } })
+  .then( /* do something with comments data */ )
+
+// 3. Get the logged in user
+
+...
+
+```
+
+---
+
+# Related data
+
+**GraphQL** to the rescue?
+
+---
+
+### Ask for data in this shape
+
+```
+{
+  nodeQuery(offset: 0, limit: 0) {
+    entities {
+      entityLabel
+      entityId
+      entityBundle
+      fieldTags {
+        entityType
+        entityLabel
+        entityId
+      }
+    }
+  }  
+}
+```
+--
+
+### Get this data back
+
+```
+{
+  "data": {
+    "nodeQuery": {
+      "entities": [
+        {
+          "entityLabel": "My Article",
+          "entityId": 1,
+          "entityBundle": "article",
+          "fieldTags": [
+            {
+              "entityType": "taxonomy_term",
+              "entityLabel": "apple",
+              "entityId": 5
+            },
+            {
+              "entityType": "taxonomy_term",
+              "entityLabel": "banana",
+              "entityId": 4
+            }
+          ]
+        }
+      ]
+  }
+}
+```
+
+---
+
+> # Was it worth it?
+
+---
+# What we lost
+
+* Helper functions for data rendering
+* Accessibility markup
+* Search engine optimization
+* Authentication and authorization
+* Localization
+* Form building and validation
+* Testing
+* RDF 🤓
+
+---
+
+# What we lost
+
+* In-place editing
+* Contextual links
+* Toolbar
+* Layout management
+* Settings tray
+* Content preview (soon Workspaces)
+
+---
+
+# What we won?
+
+We never exposed the true power of modern frontend frameworks, they are not just template engines:
+
+--
+
+<br>
+
+* State management 
+* Reactivity
+* Realtime data
+* Complex animation
+* Data visualization
+
+--
+
+<br>
+
+* Server rendering
+* Offline apps
+* Rendering to other platforms: native apps, VR etc
+
+---
+
+# What we won?
+
+Redefine workflows: From code to design
+
+---
+
+> <video style="width: 100%; height: 100%;" src="https://airbnb.design/wp-content/uploads/2017/04/DLS-Component-Screen-Sizes.mp4" preload="metadata" autoplay="autoplay" loop="loop" width="1280" height="720"></video>
+
+---
+
+> <video style="width: 100%; height: 100%;" src="https://airbnb.design/wp-content/uploads/2017/04/2017-04-24-18_39_03.mp4?_=1" preload="metadata" autoplay="autoplay" loop="loop" width="1280" height="720"></video>
+
+---
+
+# What we won?
+
+Perhaps the biggest gains are not technical
+
+---
+
+> # Freedom
+
+---
+
+# More choices to set up your products and teams
+
+* Developing backend and frontend in different speeds
+* Allows more experimentation on technologies, attract talent
+* Hiring developers without forcing Drupal on them
+
+## Getting started with React
+
+Actually, it's not that hard. You will need to have:
+
+## ES6 resources
+
+http://javascript.info to guide you
+
+## Vue resources
+
+https://vuejs.org to guide you
+https://laracasts.com/series/learn-vue-2-step-by-step for video tutorials
+
+---
+
+# React resources
+
+http://www.react.express to guide you
+https://www.webpackbin.com to play around in the web editor
+
+---
+
+# Getting started with React
+
+Why not https://github.com/facebookincubator/create-react-app?
+
+👌 Great for getting started super-fast, without writing configuration
+💉 Does not teach you about *components*, the key concept writing modern UIs
+💉 Pushing you using another package manager, Yarn
+💉 Although minimal, still contains a lot of extra baggage...
+💉 ...especially when moving on to production use
+
+---
+
+---
+
 ![](./images/dries1.png)
 
 ---
@@ -376,11 +494,4 @@ module.exports = options => {
 
 ---
 
-# We gonna miss a lot
 
-* In-place editing
-* Contextual links
-* Toolbar
-* Layout management
-* Settings tray
-* Content preview (soon Workspaces)

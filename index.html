@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/marked"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/hybrid.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Source+Code+Pro" rel="stylesheet">
+    -->
+    <script src="./vendor/vue.min.js"></script>
+    <script src="./vendor/axios.min.js"></script>
+    <script src="./vendor/marked.min.js"></script>
+    <link rel="stylesheet" href="./vendor/hybrid.min.css">
+    <script src="./vendor/highlight.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -46,6 +53,10 @@
             background: #282c34;
             font-family: 'Source Code Pro', monospace;
         }
+        li > code, p > code {
+            padding: 0.2em 0.4em;
+            font-size: 0.75em;
+        }
         .image {
             position: absolute;
             top: 0;
@@ -59,6 +70,9 @@
         }
         .image img {
             max-width: 80%;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+        }
+        video {
             box-shadow: 0 0 40px rgba(0,0,0,0.2);
         }
         em {

@@ -1,3 +1,28 @@
+
+---
+
+# JSON API
+
+## Documentation
+
+https://www.drupal.org/docs/8/modules/json-api/fetching-resources-get
+
+## Videos
+
+https://www.youtube.com/playlist?list=PLZOQ_ZMpYrZsyO-3IstImK1okrpfAjuMZ
+
+---
+
+# From Headless to Decoupled
+
+*Headless* came first, it is a developers term
+
+*Decoupling* illustrates the concept better and is now a preferred term
+
+"Get data in and out of Drupal using some API, b"
+
+---
+
 Headless
 
 https://www.youtube.com/watch?v=dgbQn2bfKJI
