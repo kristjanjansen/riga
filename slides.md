@@ -333,7 +333,7 @@ module.exports = options => {
 
 ---
 
-# Takeaway from the framework demos
+# Getting started with frameworks
 
 http://javascript.info
 
@@ -380,7 +380,7 @@ https://www.webpackbin.com
 
 ---
 
-# What we won?
+# What we will win?
 
 We never exposed the true power of modern frontend frameworks, they are not just template engines.
 
@@ -405,6 +405,10 @@ We never exposed the true power of modern frontend frameworks, they are not just
 ---
 
 <video autoplay="" loop="" muted="" class="xp"><source src="https://s3-us-west-1.amazonaws.com/c8r-demo/lab-demo.webm" type="video/webm"><source src="https://s3-us-west-1.amazonaws.com/c8r-demo/lab-demo.mp4" type="video/mp4"></video>
+
+---
+
+<video autoplay="" class="wp-video-shortcode" id="video-6877-1" width="928" height="513" preload="metadata" src="https://airbnb.design/wp-content/uploads/2017/10/WireframeClassifiersmall.mp4?_=1" style="width: 100%; height: 100%;"></video>
 
 ---
 
