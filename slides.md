@@ -18,13 +18,6 @@
 
 ---
 
-# Slides and sample project:
-
-https://github.com/kristjanjansen/vilnius
-https://github.com/kristjanjansen/drupal_example
-
----
-
 # About me
 
 I am **Kristjan Jansen**
@@ -119,6 +112,12 @@ drupal module:install jsonapi
 
 ---
 
+# Demo time
+
+https://github.com/kristjanjansen/drupal_example
+
+---
+
 # Takeaways from demo
 
 * JSON API data needs extra processing to be usable, for example `jsonapi-parse` in NPM
@@ -127,7 +126,7 @@ drupal module:install jsonapi
 
 ---
 
-# Getting all the data needed for the page
+# Getting all the data for the page
 
 ```
 const uuid = '95a0a7b9-1d7e-4766-a412-fdf4da2099ba'
@@ -407,10 +406,6 @@ We never exposed the true power of modern frontend frameworks, they are not just
 
 ---
 
-<video autoplay="" loop="" muted="" class="xp"><source src="https://s3-us-west-1.amazonaws.com/c8r-demo/lab-demo.webm" type="video/webm"><source src="https://s3-us-west-1.amazonaws.com/c8r-demo/lab-demo.mp4" type="video/mp4"></video>
-
----
-
 <video autoplay="" class="wp-video-shortcode" id="video-6877-1" width="928" height="513" preload="metadata" src="https://airbnb.design/wp-content/uploads/2017/10/WireframeClassifiersmall.mp4?_=1" style="width: 100%; height: 100%;"></video>
 
 ---
@@ -420,7 +415,7 @@ We never exposed the true power of modern frontend frameworks, they are not just
 
 ---
 
-# What will we won?
+# What we will win?
 
 Perhaps the biggest gains are not technical nor fancy
 
@@ -454,7 +449,13 @@ Perhaps the biggest gains are not technical nor fancy
 
 ---
 
-# Slides and sample project:
+# Thanks!
+
+### Slides
 
 https://github.com/kristjanjansen/vilnius
+http://kristjanjansen.ee/vilnius/
+
+### Example project
+
 https://github.com/kristjanjansen/drupal_example
