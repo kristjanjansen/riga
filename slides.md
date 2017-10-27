@@ -1,16 +1,33 @@
 > ![](./images/logo.png)
 
-> # Decoupled in practice:<br>the modern web frontend
+> # &nbsp;&nbsp;Decoupled in practice:<br>the modern web frontend
 
 > Kristjan Jansen
 > Drupalcamp Baltics
-> Vilnius 2018
+> Vilnius 2017
+
+---
+
+> ![](./images/logo.png)
+
+> # Headless in practice:<br>the modern web frontend
+
+> Kristjan Jansen
+> Drupalcamp Baltics
+> Vilnius 2017
+
+---
+
+# Slides and sample project:
+
+https://github.com/kristjanjansen/vilnius
+https://github.com/kristjanjansen/drupal_example
 
 ---
 
 # About me
 
-I am Kristjan Jansen
+I am **Kristjan Jansen**
 
 I am **prototyping** digital products, **develop** design systems and fullstack code, **mentor** tech teams and **teach** the next generation of designers.
 
@@ -44,20 +61,11 @@ I made some early core themes, helped on user experience, founded Estonian Drupa
 
 # What we gonna be talking about?
 
-Let's follow up on Ruben Teijeiro's talk:
+Let's follow up on Ruben's talk:
 
 * What does decoupled / headless Drupal building mean **in practice**?
 * How should I **start learning modern frontend** tools?
 * When to use decoupled Drupal?
-
----
-
-# Follow the slides
-
-*With latest Chrome*
-
-https://kristjanjansen.ee/vilnius
-https://github.com/kristjanjansen/vilnius
 
 ---
 
@@ -95,13 +103,9 @@ Some config needed
 
 By Facebook,<br>now a industry standard
 
-Very good tooling available
+Good tooling available
 
-Huge learning curve
-
-Work in progress
-
-
+Drupal module just getting stabile
 ---
 
 # JSON API
@@ -348,7 +352,6 @@ https://www.webpackbin.com
 
 > What will we lose? What will we win?
 
-
 ---
 
 ### What we lose<br>in theming
@@ -417,7 +420,7 @@ We never exposed the true power of modern frontend frameworks, they are not just
 
 ---
 
-# What we won?
+# What will we won?
 
 Perhaps the biggest gains are not technical nor fancy
 
@@ -435,11 +438,7 @@ Perhaps the biggest gains are not technical nor fancy
 
 ---
 
-> # There is one more thing
-
----
-
-![](./images/dries1.png)
+> # Meanwhile in Drupal issue queue
 
 ---
 
@@ -447,7 +446,15 @@ Perhaps the biggest gains are not technical nor fancy
 
 ---
 
+![](./images/vuedrupal.png)
+
+---
+
 > # Let's start learning, now 
 
-> https://kristjanjansen.ee/vilnius
-> https://github.com/kristjanjansen/vilnius
+---
+
+# Slides and sample project:
+
+https://github.com/kristjanjansen/vilnius
+https://github.com/kristjanjansen/drupal_example
